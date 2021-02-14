@@ -4,13 +4,153 @@
     height: 82vh
     background-color: $light1
     transition: all 0.4s ease
+
     @media screen and ( max-width: 1024px )
         height: 40vh
     .hero
         width: 100%
         height: 100%
         overflow: hidden
-        .slide
+        .carousel
+            background-image: url("https://image.freepik.com/free-vector/abstract-blurred-gradient-mesh-background_1159-3173.jpg")
+            background-size: cover
             width: 100%
+            display: flex
+            align-items: center
+            justify-content: center
             height: 100%
-            
+            .container-alt
+                height: 100%
+                display: flex
+                overflow: hidden
+                .tiendas
+                    display: flex
+                    align-items: flex-start
+                    justify-content: flex-start
+                    flex-direction: column
+                    height: 100%
+                    width: 50%
+                    padding: 2em 0
+                    position: relative
+                    .title
+                        position: absolute
+
+                    .tienda
+                        width: 100%
+                        margin-bottom: 1em
+                        background-color: #fff
+                        display: flex
+                        min-height: 14em
+                        border-radius: 0.375em
+                        overflow: hidden
+                        box-shadow: rgba(0, 0, 0, 0.05) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+
+                        .image
+                            padding: 2em
+                            flex: 0.5
+                            background-color: #000
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            background-size: cover
+                            background-position: center
+                            background-image: url("https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg")
+                            transition: all 0.4s ease
+                            .logo
+                                transition: all 0.4s ease
+                                width: 7em
+                                border-radius: 0.375em
+                                overflow: hidden
+                            &:hover
+                                .logo
+                                    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+
+                                    transform: scale(1.1)
+
+                        .info
+                            padding: 2em
+                            flex: 0.5
+                            background-color: #fff
+                            display: flex
+                            flex-direction: column
+                            align-items: flex-start
+                            justify-content: space-between
+                            .name
+                                font-size: 2em
+                                font-weight: 700
+                            .desc
+                                color: $dark2
+                                font-size: 0.9em
+                .deals
+                    width: 50%
+                    min-height: 100%
+                    display: flex
+                    align-items: flex-end
+                    justify-content: flex-end
+                    padding: 2em 0 6em 0
+                    position: relative
+                    .deal
+                        width: 100%
+                        height: 100%
+                        display: flex
+                        align-items: flex-end
+                        flex-direction: column
+                        justify-content: flex-end
+                        .image
+                            top: 0
+                            position: absolute
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            width: 100%
+                            height: 100%
+                            z-index: 10
+                            img
+                                z-index: -1
+                                height: 80%
+
+                        .title
+                            z-index: 10000!important
+                            font-size: 4vw
+                            font-weight: 800
+                            color: $light0
+                            padding: 0.25em
+                            line-height: 4vw
+                            background-color: $dark0
+                            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+                        .price
+                            z-index: 100
+                            display: flex
+                            align-items: center
+                            justify-content: flex-end
+                            margin-top: 0.5em
+                            background-color: $light0
+                            padding: 0.5em 1em
+                            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+                            .number
+                                font-size: 3vw
+                                line-height: 3vw
+                                font-weight: 700
+                                position: relative
+                                display: flex
+                                align-items: center
+                                justify-content: center
+                                span
+                                    font-size: 2vw
+
+                        .specs
+                            margin-bottom: -20px
+                            display: flex
+                            justify-content: flex-start
+                            display: none
+                            .spec
+                                display: flex
+                                align-items: center
+                                justify-content: center
+                                color: $light0
+                                font-weight: 600
+                                width: fit-content
+                                padding: 0.25em 1em
+                                font-size: 1.2em
+                                background-color: $dark0
+                                border-radius: 0.375em

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
 import { AnimatePresence, motion } from "framer-motion";
+import { CloseButton } from "@chakra-ui/react";
 
-import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import SigIn from "./SignIn";
 
@@ -39,6 +39,9 @@ const SignInUp = ({ setSignInUpOpen }) => {
           exit="exit"
           className="wrapper"
         >
+          <div onClick={() => setSignInUpOpen(false)} className="close-icon">
+            <CloseButton />
+          </div>
           <AnimatePresence>
             {registerOpen ? (
               <SignUp setRegisterOpen={setRegisterOpen} />

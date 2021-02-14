@@ -12,10 +12,11 @@
     z-index: 1000
     display: grid
     place-items: center
+
     .wrapper
         width: 90%
         height: fit-content
-
+        position: relative
         max-width: 30em
         background-color: #fff
         display: flex
@@ -25,6 +26,14 @@
         padding: 2em
         border-radius: 0.375em
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+        .close-icon
+            right: 1em
+            top: 1em
+            position: absolute
+            button
+                background-color: $light0
+                &:hover
+                    background-color: $light1
         .content
             width: 100%
             height: 100%
