@@ -1,0 +1,41 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,600;1,800&display=swap')
+
+//Colors
+$dark0: #111111
+$dark1: #333333
+$dark2: #555555
+$light0: #f3f3f3
+$light1: #e2e2e2
+$color1: #00d3a5
+
+body
+    font-family: "Poppins", sans-serif
+
+.container
+    width: 90%
+    max-width: 70em
+
+.container-alt
+    width: 95%
+    max-width: 90em
+
+//Global Styles
+
+.button
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $color1
+    padding: 0.5em
+    margin: 0.5em 0
+    color: $light0
+    font-weight: 700
+    font-size: 1.2em
+    transition: all 0.4s ease
+    border-radius: 0.375em
+    &:hover
+        transform: scale(1.05)
+        opacity: 0.9
+        cursor: pointer
