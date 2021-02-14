@@ -9,7 +9,7 @@ import SigIn from "./SignIn";
 const variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
-  exit: { opacity: 0, transition: { delay: 0.4, when: "afterChildren" } },
+  exit: { opacity: 0, transition: { delay: 0.2, when: "afterChildren" } },
 };
 
 const variantsWrapper = {

@@ -28,9 +28,23 @@ const items = [
   },
 ];
 
+const variants = {
+  hidden: { opacity: 0, y: "-20vh" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeInOut" },
+  },
+};
+
 const Topbar = ({ signInUpOpen, setSignInUpOpen }) => {
   return (
-    <div className="topbar">
+    <motion.div
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      className="topbar"
+    >
       <div className="container">
         <div className="items">
           {items.map((item, i) => {
@@ -63,7 +77,7 @@ const Topbar = ({ signInUpOpen, setSignInUpOpen }) => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

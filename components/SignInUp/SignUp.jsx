@@ -7,7 +7,7 @@ import { HiOutlineAtSymbol } from "react-icons/hi";
 import { motion } from "framer-motion";
 
 const variants = {
-  hidden: { opacity: 0, transition: { delay: 0.4 } },
+  hidden: { opacity: 0, transition: { delay: 0.2 } },
   visible: { opacity: 1 },
   exit: { opacity: 0 },
 };
@@ -44,8 +44,7 @@ const SignUp = ({ setRegisterOpen }) => {
           />
         </InputGroup>
       </div>
-      <div className="forgot-password">¿Olvidaste tu contraseña?</div>
-      <div className="button">Iniciar Sesión</div>
+      <div className="button">Registrarme</div>
       <div className="register" onClick={() => setRegisterOpen(false)}>
         ¿Ya tienes cuenta? <span>Inicia Sesión</span>
       </div>
