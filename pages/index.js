@@ -20,6 +20,7 @@ const variants1 = {
   exit: { opacity: 0 },
 };
 
+
 export default function Index() {
   const [signInUpOpen, setSignInUpOpen] = useState(false);
   const [onBoardOpen, setOnBoardOpen] = useState(false);

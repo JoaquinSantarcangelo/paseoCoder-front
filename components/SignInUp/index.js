@@ -38,6 +38,7 @@ const SignInUp = ({ setSignInUpOpen }) => {
           animate="visible"
           exit="exit"
           className="wrapper"
+          layout
         >
           <div onClick={() => setSignInUpOpen(false)} className="close-icon">
             <CloseButton />
