@@ -14,7 +14,7 @@ const variants = {
   },
 };
 
-const NavbarTop = () => {
+const NavbarTop = ({ cartOpen, setCartOpen }) => {
   return (
     <motion.div
       variants={variants}
@@ -49,7 +49,7 @@ const NavbarTop = () => {
           </div>
         </motion.div>
         <motion.div variants={variants} className="right-wrapper">
-          <div className="icon">
+          <div onClick={() => setCartOpen(!cartOpen)} className="icon">
             <MdShoppingCart />
           </div>
           <div className="icon">

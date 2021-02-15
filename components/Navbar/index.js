@@ -2,10 +2,10 @@ import React from "react";
 import NavbarTop from "./NavbarTop";
 import NavbarMain from "./NavbarMain";
 
-const index = () => {
+const index = ({ cartOpen, setCartOpen }) => {
   return (
     <div className="navbar">
-      <NavbarTop />
+      <NavbarTop cartOpen={cartOpen} setCartOpen={setCartOpen} />
       <NavbarMain />
     </div>
   );

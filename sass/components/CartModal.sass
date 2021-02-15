@@ -1,0 +1,32 @@
+@import "../index"
+
+.cart-modal
+    position: fixed
+    background-color: rgba(0,0,0,0.5)
+    right: 0
+    top: 0
+    width: 100vw
+    height: 100vh
+    z-index: 100
+    display: flex
+    flex-direction: row-reverse
+    .wrapper
+        width: 50vw
+        max-width: 25em
+        color: $dark0
+        padding: 2em
+        z-index: 100
+        background-color: #fff
+        .title
+            font-size: 1.6em
+            font-weight: 600
+        hr
+            margin-bottom: 1em
+        .close-icon
+            right: 1em
+            top: 1em
+            position: absolute
+            button
+                background-color: $light0
+                &:hover
+                    background-color: $light1

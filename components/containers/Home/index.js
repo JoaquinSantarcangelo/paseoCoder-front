@@ -1,32 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Divider } from "@chakra-ui/react";
-import { AiFillInstagram } from "react-icons/ai";
+
+//Components
+import Tienda from "./Tienda";
+import Deal from "./Deal";
 
 const variants = {
   hidden: { opacity: 0, y: "-20vh" },
   visible: {
     opacity: 1,
     y: 0,
-  },
-  exit: { opacity: 0 },
-};
-
-const variantsDeal = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { delay: 1 },
-  },
-  exit: { opacity: 0 },
-};
-
-const variantsDeal2 = {
-  hidden: { opacity: 0, height: "0%" },
-  visible: {
-    opacity: 1,
-    height: "fit-content",
-    transition: { delay: 1.4 },
   },
   exit: { opacity: 0 },
 };
@@ -85,105 +68,17 @@ const deals = [
   },
   {
     title: "Redmi Note 9",
-    price: ["$", "399"],
+    price: ["USD", "399"],
     image:
       "https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-9-pro/specs1block.png",
   },
   {
     title: "Airpods Max",
-    price: ["$", "699"],
+    price: ["USD", "699"],
     image:
       "https://www.apple.com/v/airpods-max/c/images/overview/hero__gnfk5g59t0qe_xlarge.png",
   },
 ];
-
-const Tienda = ({ infoTienda, i }) => {
-  return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      animate="visible"
-      transition={{
-        delay: 0.4 + i / 5,
-        duration: 0.4,
-        ease: "easeInOut",
-        staggerChildren: 0.2,
-      }}
-      className="tienda"
-    >
-      <div
-        style={{ backgroundImage: `url(${infoTienda.coverImage})` }}
-        className="image"
-      >
-        <div className={infoTienda.invert ? "social invert" : "social"}>
-          {infoTienda.social && infoTienda.social.instagram && (
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href={infoTienda.social.instagram}
-            >
-              <div id="instagram">
-                <AiFillInstagram />
-              </div>
-            </a>
-          )}
-        </div>
-        <div className="logo">
-          <img src={infoTienda.profileImage} alt="" />
-        </div>
-      </div>
-      <div className="info">
-        <div className="wrapper">
-          <div className="name">{infoTienda.name}</div>
-          <Divider />
-          <div className="desc">{infoTienda.desc}</div>
-        </div>
-        <div className="ver-tienda button">Ver tienda</div>
-      </div>
-    </motion.div>
-  );
-};
-
-const Deal = ({ infoDeal, i }) => {
-  return (
-    <motion.div
-      variants={variantsDeal}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      className="deal"
-    >
-      <div className="specs">
-        <div className="spec">32 GB</div>
-      </div>
-      <motion.div
-        variants={variantsDeal2}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        className="title"
-      >
-        {infoDeal.title}
-      </motion.div>
-      <motion.div
-        variants={variantsDeal2}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        className="price"
-      >
-        <div className="number pesos">
-          <span>{infoDeal.price[0]}</span>
-          {infoDeal.price[1]}
-        </div>
-      </motion.div>
-      <motion.div variants={variantsDeal} className="image">
-        <img src={infoDeal.image} alt="" />
-        <img src={infoDeal.image} alt="" />
-      </motion.div>
-    </motion.div>
-  );
-};
 
 const Home = () => {
   const [activeDeal, setActiveDeal] = useState(0);
@@ -192,11 +87,11 @@ const Home = () => {
   return (
     <div className="home">
       <motion.div
-        initial={{ x: "100vw" }}
-        animate={{ x: 0 }}
+        initial={{ y: "100vh" }}
+        animate={{ y: 0 }}
         transition={{
           when: "beforeChildren",
-          duration: 0.5,
+          duration: 1,
           ease: "easeInOut",
         }}
         className="hero"
@@ -245,7 +140,15 @@ const Home = () => {
               </AnimatePresence>
             </motion.div>
           </div>
-          <div className="overlay"></div>
+          <motion.div
+            drag="x"
+            dragConstraints={{ left: -800, right: 0 }}
+            className="tiendas-mobile"
+          >
+            {tiendas.map((t, i) => {
+              return <Tienda key={i} infoTienda={t} i={i} />;
+            })}
+          </motion.div>
         </div>
       </motion.div>
     </div>

@@ -1,0 +1,131 @@
+.deals
+    width: 70%
+    min-height: 35em
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end
+    position: relative
+    @media screen and ( max-width: 1024px )
+        width: 100%
+    .deal
+        position: absolute
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: flex-end
+        flex-direction: column
+        justify-content: center
+
+        .image
+            top: 0
+            left: 0
+            position: absolute
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            height: 100%
+            width: 80%
+            padding: 0 0 0 4em
+            img
+                min-width: 30em
+                max-width: 30em
+                transition: all 0.4s ease
+                transform-origin: 50% 50%
+                z-index: 2
+                -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.25))
+                &:hover
+                    transform: scale(1.1)
+                &:last-child
+                    position: absolute
+                    top: 5em
+                    left: -10vw
+                    transform: scale(1.5)
+                    transform-origin: 0 0
+                    filter: blur(4px)
+                    opacity: 0.33
+                    z-index: 1
+        .title
+            z-index: 1000
+            font-size: 3vw
+            font-weight: 800
+            color: $light0
+            padding: 0.25em
+            line-height: 4vw
+            background-color: $dark0
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+            text-transform: uppercase
+            border-radius: 0.375rem 0.375rem 0 0.375rem
+        .price
+            z-index: 1000
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            margin-bottom: 0
+            background-color: $light0
+            padding: 0.5em 1em
+            border-radius: 0 0 0.375rem 0.375rem
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+            .number
+                font-size: 3vw
+                line-height: 3vw
+                font-weight: 700
+                position: relative
+                display: flex
+                align-items: center
+                justify-content: center
+                span
+                    font-size: 1.5vw
+                    font-weight: 400
+
+        .specs
+            margin-bottom: -20px
+            display: flex
+            justify-content: flex-start
+            display: none
+            .spec
+                display: flex
+                align-items: center
+                justify-content: center
+                color: $light0
+                font-weight: 600
+                width: fit-content
+                padding: 0.25em 1em
+                font-size: 1.2em
+                background-color: $dark0
+                border-radius: 0.375em
+    @media screen and ( max-width: 1024px )
+        .deal
+            .title
+                font-size: 8vw
+            .price
+                padding: 1em
+                .number
+                    font-size: 3em
+                    span
+                        font-size: 0.5em
+
+    @media screen and ( max-width: 768px )
+        .deal
+            .image
+                width: 100%
+                padding: 0
+
+
+    //Indicators
+    .indicators
+        position: absolute
+        top: 2em
+        right: 0
+        display: flex
+        transition: all 0.4s ease
+        .indicator
+            width: 1.5em
+            height: 1.5em
+            border: 2px solid $light0
+            margin-left: 0.5em
+            border-radius: 50%
+            transition: all 0.4s ease
+            cursor: pointer
+            z-index: 100
+        .active
+            background-color: $light0
