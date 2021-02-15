@@ -10,6 +10,8 @@ import "../sass/components/SignInUp.sass";
 // -- Containers --
 import "../sass/containers/Home.sass";
 import "../sass/containers/Tiendas.sass";
+import "../sass/containers/Tienda.sass";
+import "../sass/containers/NewArrivals.sass";
 
 //Normalizer
 import "normalize.css";

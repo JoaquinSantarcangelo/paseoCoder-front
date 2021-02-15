@@ -14,71 +14,7 @@ const variants = {
   exit: { opacity: 0 },
 };
 
-const tiendas = [
-  {
-    name: "PhoneStore",
-    profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
-    coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-    social: { instagram: "http://www.intagram.com/phonestorelp" },
-  },
-  {
-    name: "Silicon Informatica",
-    profileImage:
-      "https://instagram.faep9-1.fna.fbcdn.net/v/t51.2885-19/s150x150/145739863_692926148046697_8231536998551052_n.jpg?_nc_ht=instagram.faep9-1.fna.fbcdn.net&_nc_ohc=3y0RA7YpFsYAX8Yjgkv&tp=1&oh=f5fe5e1eac8f06b4a0011aede8b19ecc&oe=6054312F",
-    coverImage:
-      "https://storage-asset.msi.com/event/trueGaminglanding/images/msi_pd.png",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-    invert: true,
-  },
-  {
-    name: "Grand Central Store",
-    profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
-    coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-  },
-  {
-    name: "PhoneStore",
-    profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
-    coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-  },
-  {
-    name: "PhoneStore",
-    profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
-    coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-  },
-];
 
-const deals = [
-  {
-    title: "Iphone 12",
-    price: ["USD", "899"],
-    image:
-      "https://personal.vteximg.com.br/arquivos/ids/405529-600-600/iPhone-SE-White-ATu-plan-Factura-1-1428615.jpg?v=637424406205730000",
-  },
-  {
-    title: "Redmi Note 9",
-    price: ["USD", "399"],
-    image:
-      "https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-9-pro/specs1block.png",
-  },
-  {
-    title: "Airpods Max",
-    price: ["USD", "699"],
-    image:
-      "https://www.apple.com/v/airpods-max/c/images/overview/hero__gnfk5g59t0qe_xlarge.png",
-  },
-];
 
 const variantsTransition = {
   hidden: { opacity: 0 },
@@ -86,9 +22,9 @@ const variantsTransition = {
   exit: { opacity: 0 },
 };
 
-const Home = () => {
+const Home = ({ tiendas, deals }) => {
   const [activeDeal, setActiveDeal] = useState(0);
-
+  const [blockDeal, setBlockDeal] = useState(false);
   return (
     <motion.div
       variants={variantsTransition}
@@ -100,16 +36,18 @@ const Home = () => {
       <motion.div variants={variantsTransition} className="hero">
         <div className="carousel">
           <div className="container-alt">
-            <motion.div
-              drag="y"
-              dragConstraints={{ top: -800, bottom: 0 }}
-              className="tiendas"
-            >
+            <div className="wrapper">
               <div className="title">Tiendas</div>
-              {tiendas.map((t, i) => {
-                return <Tienda key={i} infoTienda={t} i={i} />;
-              })}
-            </motion.div>
+              <motion.div
+                drag="y"
+                dragConstraints={{ top: -800, bottom: 0 }}
+                className="tiendas"
+              >
+                {tiendas.map((t, i) => {
+                  return <Tienda key={i} infoTienda={t} i={i} />;
+                })}
+              </motion.div>
+            </div>
             <motion.div
               variants={variants}
               initial="hidden"

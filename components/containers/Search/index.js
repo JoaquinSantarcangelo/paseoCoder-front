@@ -14,11 +14,8 @@ const index = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="new-arrivals"
     >
-      <div className="container">
-        <div className="title">New Arrivals</div>
-      </div>
+      Search
     </motion.div>
   );
 };

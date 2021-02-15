@@ -31,8 +31,14 @@
                 height: 100%
                 display: flex
                 overflow: hidden
+                .wrapper
+                    display: flex
+                    flex-direction: column
 
             @media screen and ( max-width: 1024px )
                 flex-direction: column
+                .container-alt
+                    .wrapper
+                        display: none
                 .tiendas-mobile
                     display: flex

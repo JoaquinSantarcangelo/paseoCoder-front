@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Divider } from "@chakra-ui/react";
 import { AiFillInstagram } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const variants = {
   hidden: { opacity: 0, y: "-5vh" },
@@ -53,7 +54,9 @@ const Tienda = ({ infoTienda, i }) => {
           <Divider />
           <div className="desc">{infoTienda.desc}</div>
         </div>
-        <div className="ver-tienda button">Ver tienda</div>
+        <Link className="ver-tienda button" to={`/tienda/${infoTienda.id}`}>
+          Ver tienda
+        </Link>
       </div>
     </motion.div>
   );

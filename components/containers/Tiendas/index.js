@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Tienda from "../Home/Tienda";
 
 const variantsTransition = {
   hidden: { opacity: 0 },
@@ -7,7 +8,7 @@ const variantsTransition = {
   exit: { opacity: 0 },
 };
 
-const index = () => {
+const index = ({ tiendas }) => {
   return (
     <motion.div
       variants={variantsTransition}
@@ -16,7 +17,21 @@ const index = () => {
       exit="exit"
       className="tiendas-page"
     >
-      Tiendas Page
+      <div className="container-alt">
+        <div className="title">Tiendas</div>
+        <div className="wrapper-alt">
+          <div className="tiendas">
+            {tiendas.map((t, i) => {
+              if (i < 4) return <Tienda infoTienda={t} />;
+            })}
+          </div>
+          <div className="tiendas">
+            {tiendas.map((t, i) => {
+              if (i > 3) return <Tienda infoTienda={t} />;
+            })}
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };

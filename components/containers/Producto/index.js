@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const variantsTransition = {
@@ -8,17 +9,16 @@ const variantsTransition = {
 };
 
 const index = () => {
+  const { tienda, id } = useParams();
+
   return (
     <motion.div
       variants={variantsTransition}
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="new-arrivals"
     >
-      <div className="container">
-        <div className="title">New Arrivals</div>
-      </div>
+      Producto {id} de {tienda}
     </motion.div>
   );
 };

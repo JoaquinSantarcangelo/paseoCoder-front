@@ -44,7 +44,7 @@ const Topbar = ({ signInUpOpen, setSignInUpOpen }) => {
       <div className="container">
         <div className="items">
           {items.map((item, i) => {
-            if (i === 5) {
+            if (i === 4) {
               return (
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}

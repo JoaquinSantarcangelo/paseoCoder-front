@@ -54,8 +54,14 @@ const Deal = ({ infoDeal, i }) => {
         </div>
       </motion.div>
       <motion.div variants={variantsDeal} className="image">
-        <img src={infoDeal.image} alt="" />
-        <img src={infoDeal.image} alt="" />
+        <div
+          className="placeholder"
+          style={{ backgroundImage: `url(${infoDeal.image})` }}
+        ></div>
+        <div
+          className="placeholder blur"
+          style={{ backgroundImage: `url(${infoDeal.image})` }}
+        ></div>
       </motion.div>
     </motion.div>
   );
