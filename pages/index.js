@@ -17,11 +17,16 @@ import CartModal from "../components/CartModal";
 import Home from "../components/containers/Home";
 import Search from "../components/containers/Search";
 import Tiendas from "../components/containers/Tiendas";
+
 import Tienda from "../components/containers/Tienda";
 import Producto from "../components/containers/Producto";
 import NewArrivals from "../components/containers/NewArrivals";
+import Sale from "../components/containers/Sale";
+
+//---Information Pages
 import TermsConditions from "../components/containers/TermsConditions";
 import SecurityPrivacy from "../components/containers/SecurityPrivacy";
+import Help from "../components/containers/Help";
 
 //Fake DB
 const tiendas = [
@@ -177,6 +182,8 @@ export default function Index() {
                   component={SecurityPrivacy}
                 ></Route>
                 <Route path="/new-arrivals" component={NewArrivals}></Route>
+                <Route path="/sale" component={Sale}></Route>
+                <Route path="/ayuda" component={Help}></Route>
               </Switch>
             </AnimatePresence>
           )}

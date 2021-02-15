@@ -14,8 +14,6 @@ const variants = {
   exit: { opacity: 0 },
 };
 
-
-
 const variantsTransition = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -25,6 +23,7 @@ const variantsTransition = {
 const Home = ({ tiendas, deals }) => {
   const [activeDeal, setActiveDeal] = useState(0);
   const [blockDeal, setBlockDeal] = useState(false);
+
   return (
     <motion.div
       variants={variantsTransition}
@@ -37,16 +36,21 @@ const Home = ({ tiendas, deals }) => {
         <div className="carousel">
           <div className="container-alt">
             <div className="wrapper">
-              <div className="title">Tiendas</div>
-              <motion.div
-                drag="y"
-                dragConstraints={{ top: -800, bottom: 0 }}
-                className="tiendas"
-              >
-                {tiendas.map((t, i) => {
-                  return <Tienda key={i} infoTienda={t} i={i} />;
-                })}
-              </motion.div>
+              <div className="subwrapper">
+                <div className="title">Tiendas</div>
+                <div className="ver-todas">Ver todas</div>
+              </div>
+              <div className="drag-wrapper">
+                <motion.div
+                  drag="y"
+                  dragConstraints={{ top: -1500, bottom: 0 }}
+                  className="tiendas"
+                >
+                  {tiendas.map((t, i) => {
+                    return <Tienda key={i} infoTienda={t} i={i} />;
+                  })}
+                </motion.div>
+              </div>
             </div>
             <motion.div
               variants={variants}
@@ -59,9 +63,7 @@ const Home = ({ tiendas, deals }) => {
                 {deals.map((d, i) => (
                   <div
                     onClick={() => {
-                      setBlockDeal(true);
                       setActiveDeal(i);
-                      setBlockDeal(false);
                     }}
                     className={
                       i === activeDeal ? "indicator active" : "indicator"

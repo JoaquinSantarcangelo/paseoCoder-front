@@ -1,7 +1,7 @@
 import React from "react";
-import { MdShoppingCart } from "react-icons/md";
-import { MdFavorite } from "react-icons/md";
-import { MdSearch } from "react-icons/md";
+import { MdShoppingCart, MdSearch, MdFavorite } from "react-icons/md";
+import { ImMenu } from "react-icons/im";
+
 import { Input, InputGroup, InputRightElement, Select } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -25,6 +25,9 @@ const NavbarTop = ({ cartOpen, setCartOpen }) => {
     >
       <motion.div variants={variants} className="container">
         <motion.div variants={variants} className="left-wrapper">
+          <div className="menu-icon">
+            <ImMenu />
+          </div>
           <Link to="/">
             <div className="logo">
               <img

@@ -16,7 +16,7 @@ const index = () => {
       exit="exit"
       className="new-arrivals"
     >
-      <div className="container">
+      <div className="container-alt">
         <div className="title">New Arrivals</div>
       </div>
     </motion.div>

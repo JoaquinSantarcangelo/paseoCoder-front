@@ -37,7 +37,7 @@
             .blur
                 position: absolute
                 transform-origin: center
-                transform: scale(1.4)
+                transform: scale(1.4) translateY(5vh) translateX(1vw)
                 z-index: -1
                 opacity: 0.33
                 filter: blur(4px)
@@ -126,3 +126,5 @@
             z-index: 100
         .active
             background-color: $light0
+        @media screen and ( max-width: 1024px )
+            top: 1em

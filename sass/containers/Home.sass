@@ -34,7 +34,31 @@
                 .wrapper
                     display: flex
                     flex-direction: column
+                    .subwrapper
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        margin: 1em 0
+                        .title
+                            margin-top: 0
+                        .ver-todas
+                            border-radius: 0.375em
+                            border: solid 2px $light0
+                            padding: 0.375em 1.5em
+                            color: $dark0
+                            background-color: $light0
+                            transition: all 0.4s ease
 
+                            &:hover
+                                color: $light0
+                                background-color: transparent
+                                transform: scale(1.05)
+                                cursor: pointer
+                    .drag-wrapper
+                        height: 100%
+                        width: 100%
+                        border-radius: 0.375em
+                        overflow: hidden
             @media screen and ( max-width: 1024px )
                 flex-direction: column
                 .container-alt

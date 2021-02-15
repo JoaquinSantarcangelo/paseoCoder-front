@@ -10,18 +10,16 @@ const variantsTransition = {
 };
 
 const index = () => {
-  const { id } = useParams();
-
   return (
     <motion.div
       variants={variantsTransition}
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="tienda-page"
+      className="sale"
     >
-      <div className="container">
-        <div className="title">{id}</div>
+      <div className="container-alt">
+        <div className="title">Sale</div>
       </div>
     </motion.div>
   );

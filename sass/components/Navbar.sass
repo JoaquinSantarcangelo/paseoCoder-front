@@ -58,8 +58,23 @@
                         transform: scale(1.1)
                         cursor: pointer
                         color: $color1
-
+        .menu-icon
+            display: none
+        @media screen and ( max-width: 768px )
+            height: 11vh
+            .container
+                .right-wrapper
+                    .icon
+                        svg
+                            font-size: 2em
+            .menu-icon
+                display: flex
+                margin-right: 1em
+                svg
+                    font-size: 2em
     //Navbar Main
     .navbar-main
         height: 5vh
         box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px
+        @media screen and ( max-width: 768px )
+            display: none

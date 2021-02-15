@@ -12,6 +12,8 @@ import "../sass/containers/Home.sass";
 import "../sass/containers/Tiendas.sass";
 import "../sass/containers/Tienda.sass";
 import "../sass/containers/NewArrivals.sass";
+import "../sass/containers/Sale.sass";
+import "../sass/containers/Help.sass";
 
 //Normalizer
 import "normalize.css";
