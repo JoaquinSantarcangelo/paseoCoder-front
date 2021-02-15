@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 //Components
@@ -38,7 +39,9 @@ const Home = ({ tiendas, deals }) => {
             <div className="wrapper">
               <div className="subwrapper">
                 <div className="title">Tiendas</div>
-                <div className="ver-todas">Ver todas</div>
+                <Link to="/tiendas" className="ver-todas">
+                  Ver todas
+                </Link>
               </div>
               <div className="drag-wrapper">
                 <motion.div
