@@ -16,12 +16,8 @@ import CartModal from "../components/CartModal";
 //Containers
 import Home from "../components/containers/Home";
 import Tiendas from "../components/containers/Tiendas";
-
-const variants1 = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-  exit: { opacity: 0 },
-};
+import NewArrivals from "../components/containers/NewArrivals";
+import TermsConditions from "../components/containers/TermsConditions";
 
 export default function Index() {
   const [signInUpOpen, setSignInUpOpen] = useState(false);
@@ -52,10 +48,15 @@ export default function Index() {
 
         <Route
           render={({ location }) => (
-            <AnimatePresence exitBeforeEnter initial={false}>
+            <AnimatePresence exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
                 <Route path="/" exact component={Home}></Route>
                 <Route path="/tiendas" component={Tiendas}></Route>
+                <Route
+                  path="/terminos-y-condiciones"
+                  component={TermsConditions}
+                ></Route>
+                <Route path="/new-arrivals" component={NewArrivals}></Route>
               </Switch>
             </AnimatePresence>
           )}

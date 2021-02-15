@@ -88,7 +88,6 @@ const variantsTransition = {
 
 const Home = () => {
   const [activeDeal, setActiveDeal] = useState(0);
-  const [blockDeal, setBlockDeal] = useState(false);
 
   return (
     <motion.div
@@ -98,17 +97,7 @@ const Home = () => {
       exit="exit"
       className="home"
     >
-      <motion.div
-        initial={{ y: "100vh" }}
-        animate={{ y: 0 }}
-        transition={{
-          when: "beforeChildren",
-          duration: 1,
-          ease: "easeInOut",
-        }}
-        exit={{ y: "100vh" }}
-        className="hero"
-      >
+      <motion.div variants={variantsTransition} className="hero">
         <div className="carousel">
           <div className="container-alt">
             <motion.div

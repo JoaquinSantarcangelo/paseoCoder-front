@@ -9,23 +9,18 @@ const items = [
   },
   {
     text: "New Arrivals",
-    link: "#",
-  },
-  {
-    text: "Verano 2021",
-    link: "#",
+    link: "/new-arrivals",
   },
   {
     text: "Sale",
-    link: "#",
+    link: "/sale",
   },
   {
     text: "Ayuda",
-    link: "#",
+    link: "/ayuda",
   },
   {
     text: "Iniciar Sesión / Registro",
-    link: "#",
   },
 ];
 
