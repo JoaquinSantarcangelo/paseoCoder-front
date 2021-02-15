@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SeguridadYPrivacidad = () => {
+const index = () => {
     return (
         <div className="privacy-security">
             
