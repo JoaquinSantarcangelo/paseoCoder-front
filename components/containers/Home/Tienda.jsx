@@ -4,7 +4,7 @@ import { Divider } from "@chakra-ui/react";
 import { AiFillInstagram } from "react-icons/ai";
 
 const variants = {
-  hidden: { opacity: 0, y: "-20vh" },
+  hidden: { opacity: 0, y: "-5vh" },
   visible: {
     opacity: 1,
     y: 0,
@@ -19,7 +19,7 @@ const Tienda = ({ infoTienda, i }) => {
       initial="hidden"
       animate="visible"
       transition={{
-        delay: 0.4 + i / 5,
+        delay: 0.6 + i / 5,
         duration: 0.4,
         ease: "easeInOut",
         staggerChildren: 0.2,

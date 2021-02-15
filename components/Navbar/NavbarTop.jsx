@@ -4,6 +4,7 @@ import { MdFavorite } from "react-icons/md";
 import { MdSearch } from "react-icons/md";
 import { Input, InputGroup, InputRightElement, Select } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const variants = {
   hidden: { opacity: 0, y: "-20vh" },
@@ -24,12 +25,14 @@ const NavbarTop = ({ cartOpen, setCartOpen }) => {
     >
       <motion.div variants={variants} className="container">
         <motion.div variants={variants} className="left-wrapper">
-          <div className="logo">
-            <img
-              src="https://www.pasajeenlinea.com/uploads/logo/logo_5ed1e32b71122.png"
-              alt=""
-            />
-          </div>
+          <Link to="/">
+            <div className="logo">
+              <img
+                src="https://www.pasajeenlinea.com/uploads/logo/logo_5ed1e32b71122.png"
+                alt=""
+              />
+            </div>
+          </Link>
           <div className="search-bar">
             <InputGroup>
               <Select

@@ -9,6 +9,7 @@ import "../sass/components/SignInUp.sass";
 
 // -- Containers --
 import "../sass/containers/Home.sass";
+import "../sass/containers/Tiendas.sass";
 
 //Normalizer
 import "normalize.css";
@@ -33,9 +34,13 @@ const theme = extendTheme({ colors });
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <div suppressHydrationWarning>
+      {typeof window === "undefined" ? null : (
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      )}
+    </div>
   );
 }
 

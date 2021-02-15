@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const items = [
   {
     text: "Tiendas",
-    link: "#",
+    link: "/tiendas",
   },
   {
     text: "New Arrivals",
@@ -70,7 +71,7 @@ const Topbar = ({ signInUpOpen, setSignInUpOpen }) => {
                   key={i}
                   className="item"
                 >
-                  {item.text}
+                  <Link to={item.link}>{item.text} </Link>
                 </motion.div>
               );
             }
