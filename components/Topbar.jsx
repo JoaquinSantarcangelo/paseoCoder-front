@@ -29,7 +29,7 @@ const variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeInOut" },
+    transition: { delay: 0.6, duration: 0.6, ease: "easeInOut" },
   },
 };
 

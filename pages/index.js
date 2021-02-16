@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 //--- Modals
+import Loading from "../components/Loading";
 import SignInUp from "../components/SignInUp";
 import OnBoardModal from "../components/OnBoardModal";
 import CartModal from "../components/CartModal";
@@ -17,7 +18,6 @@ import CartModal from "../components/CartModal";
 import Home from "../components/containers/Home";
 import Search from "../components/containers/Search";
 import Tiendas from "../components/containers/Tiendas";
-
 import Tienda from "../components/containers/Tienda";
 import Producto from "../components/containers/Producto";
 import NewArrivals from "../components/containers/NewArrivals";
@@ -95,6 +95,16 @@ export default function Index() {
   const [signInUpOpen, setSignInUpOpen] = useState(false);
   const [onBoardOpen, setOnBoardOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const pageLoaded = () => {
+      window.addEventListener("load", () => {
+        setLoading(false);
+      });
+    };
+    pageLoaded();
+  }, []);
 
   return (
     <div className="app">
@@ -104,6 +114,7 @@ export default function Index() {
       </Head>
 
       {/* Modals | Starts*/}
+      <AnimatePresence>{loading && <Loading />}</AnimatePresence>
       <Router>
         <AnimatePresence>
           {signInUpOpen && <SignInUp setSignInUpOpen={setSignInUpOpen} />}

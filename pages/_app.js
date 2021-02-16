@@ -6,6 +6,7 @@ import "../sass/components/Topbar.sass";
 import "../sass/components/Navbar.sass";
 import "../sass/components/Footer.sass";
 import "../sass/components/SignInUp.sass";
+import "../sass/components/Loading.sass";
 
 // -- Containers --
 import "../sass/containers/Home.sass";
@@ -18,7 +19,7 @@ import "../sass/containers/Sale.sass";
 import "../sass/containers/Help.sass";
 
 // -- Dashboard --
-import "../sass/containers/Dashboard/SignIn.sass"
+import "../sass/containers/Dashboard/SignIn.sass";
 
 //Normalizer
 import "normalize.css";
@@ -33,6 +34,7 @@ const colors = {
   light: {
     100: "f3f3f3",
     200: "e2e2e2",
+    300: "00d3a5",
   },
   brand: {
     100: "00d3a5",
