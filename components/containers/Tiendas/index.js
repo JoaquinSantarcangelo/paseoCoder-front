@@ -11,8 +11,8 @@ const variantsTransition = {
 
 const index = ({ tiendas }) => {
   useEffect(() => {
-    const cards = document.querySelectorAll(".tienda")
-    console.log(cards)
+    const cards = document.querySelectorAll(".tienda");
+    console.log(cards);
   }, []);
 
   return (

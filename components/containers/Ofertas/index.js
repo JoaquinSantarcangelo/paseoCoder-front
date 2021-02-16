@@ -19,7 +19,9 @@ const index = () => {
       className="sale"
     >
       <div className="container-alt">
-        <div className="title">Ofertas</div>
+        <motion.div className="title" layoutId="title">
+          Ofertas
+        </motion.div>
       </div>
     </motion.div>
   );

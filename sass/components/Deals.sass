@@ -26,6 +26,7 @@
             justify-content: flex-start
             height: 95%
             max-height: 35em
+            min-width: 20em
             width: 100%
             padding: 0 0 0 2em
 
@@ -127,7 +128,10 @@
 
     @media screen and ( max-width: 768px )
         .deal
+            justify-content: flex-end
+
             .cta
+                margin-bottom: 4em
                 margin-top: 1em
                 font-size: 1.4em
             .title
@@ -159,6 +163,8 @@
         z-index: 100
         @media screen and ( max-width: 1024px )
             left: 0em
+        @media screen and ( max-width: 768px )
+            padding: 0.375em 0.75em
 
     //Indicators
     .indicators
