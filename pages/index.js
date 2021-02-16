@@ -31,7 +31,7 @@ import Help from "../components/containers/Help";
 //Fake DB
 const tiendas = [
   {
-    name: "PhoneStore",
+    name: "PhoneStoress",
     id: "phonestore",
     profileImage:
       "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",

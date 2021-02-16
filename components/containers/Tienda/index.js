@@ -12,12 +12,14 @@ const variantsTransition = {
 const index = ({ tiendas }) => {
   const { id } = useParams();
   const [infoTienda, setInfoTienda] = useState(
-    tiendas.find((t) => (t.id = id))
+    tiendas.find((t) => t.id === id)
   );
 
   useEffect(() => {
-    setInfoTienda(tiendas.find((t) => (t.id = id)));
-    console.log(id, infoTienda)
+    console.log(id);
+    console.log(tiendas);
+    const aux = tiendas.find((t) => t.id === id);
+    setInfoTienda(aux);
   }, [id]);
 
   return (
@@ -28,8 +30,12 @@ const index = ({ tiendas }) => {
       exit="exit"
       className="tienda-page"
     >
-      <div className="container">
-        <div className="title">{infoTienda.name}</div>
+      <div
+        style={{ backgroundImage: `url(${infoTienda.coverImage})` }}
+        className="tienda-hero"
+      ></div>
+      <div className="container-alt">
+        <div className="config"></div>
       </div>
     </motion.div>
   );

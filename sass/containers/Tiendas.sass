@@ -4,13 +4,22 @@
     min-height: 83vh
     display: flex
     justify-content: center
-    .container-alt
+    .container
         .wrapper-alt
             display: flex
             justify-content: space-between
             .tiendas
+                cursor: default
                 .tienda
+                    width: 100%
                     .info
                         background-color: $light0
                 &:first-child
                     margin-right: 1em
+                @media screen and ( max-width: 1024px )
+                    display: flex
+            @media screen and ( max-width: 768px )
+                flex-direction: column
+                .tiendas
+                    &:first-child
+                        margin-right: 0em

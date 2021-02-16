@@ -10,7 +10,7 @@ const variantsDeal = {
   },
   exit: {
     opacity: 0,
-    transition: { delay: 1, duration: 0.6, when: "afterChildren" },
+    transition: { delay: 1, duration: 0.2, when: "afterChildren" },
   },
 };
 
@@ -63,6 +63,9 @@ const Deal = ({ infoDeal, i }) => {
           <span>{infoDeal.price[0]}</span>
           {infoDeal.price[1]}
         </div>
+      </motion.div>
+      <motion.div variants={variantsDeal} className="cta">
+        Me interesa
       </motion.div>
       <motion.div variants={variantsDeal} className="image">
         <div

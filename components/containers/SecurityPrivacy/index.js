@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 const variantsTransition = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -13,8 +13,11 @@ const index = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
+      className="security-privacy"
     >
-      Security & Privacy
+      <div className="container">
+        <div className="title">Seguridad y Privacidad</div>
+      </div>
     </motion.div>
   );
 };

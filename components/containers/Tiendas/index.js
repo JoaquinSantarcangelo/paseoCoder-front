@@ -23,7 +23,7 @@ const index = ({ tiendas }) => {
       exit="exit"
       className="tiendas-page"
     >
-      <div className="container-alt">
+      <div className="container">
         <div className="title">Tiendas</div>
         <div className="wrapper-alt">
           <div className="tiendas">

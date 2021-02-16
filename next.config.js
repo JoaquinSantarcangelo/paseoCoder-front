@@ -6,6 +6,10 @@ module.exports = {
         source: "/:any*",
         destination: "/",
       },
+      {
+        source: "/dashboard",
+        destination: "/dashboard",
+      },
     ];
   },
 };
