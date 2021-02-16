@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import CountdownC from "../../Countdown";
 
 //Components
 import Tienda from "./Tienda";
@@ -46,7 +47,7 @@ const Home = ({ tiendas, deals }) => {
               <div className="drag-wrapper">
                 <motion.div
                   drag="y"
-                  dragConstraints={{ top: -1500, bottom: 0 }}
+                  dragConstraints={{ top: -600, bottom: 0 }}
                   className="tiendas"
                 >
                   {tiendas.map((t, i) => {
@@ -62,9 +63,11 @@ const Home = ({ tiendas, deals }) => {
               transition={{ delay: 1, staggerChildren: 1 }}
               className="deals"
             >
+              <CountdownC />
               <div className="indicators">
                 {deals.map((d, i) => (
                   <div
+                    key={i}
                     onClick={() => {
                       setActiveDeal(i);
                     }}
@@ -85,15 +88,17 @@ const Home = ({ tiendas, deals }) => {
               </AnimatePresence>
             </motion.div>
           </div>
-          <motion.div
-            drag="x"
-            dragConstraints={{ left: -800, right: 0 }}
-            className="tiendas-mobile"
-          >
-            {tiendas.map((t, i) => {
-              return <Tienda key={i} infoTienda={t} i={i} />;
-            })}
-          </motion.div>
+          <div className="mobile-wrapper">
+            <motion.div
+              drag="x"
+              dragConstraints={{ left: -800, right: 200 }}
+              className="tiendas-mobile"
+            >
+              {tiendas.map((t, i) => {
+                return <Tienda key={i} infoTienda={t} i={i} />;
+              })}
+            </motion.div>
+          </div>
         </div>
       </motion.div>
     </motion.div>

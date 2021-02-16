@@ -1,20 +1,48 @@
 @import "../index"
 
 .footer
-    height: 40vh
+    height: fit-content
     font-family: "Poppins", sans-serif
     max-height: 20em
-    min-height: 15em
+
     .footer-main
-        height: 80%
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        height: fit-content
         background-color: $light0
+        .container
+            padding: 4em
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+            .logo
+                width: 14em
+                filter: invert(1)
+            .text
+                text-transform: uppercase
+            .header
+                font-weight: 600
+            .social-icons
+                display: flex
+                .icon
+                    margin-right: 0.5em
+                    transition: all 0.4s ease
+                    svg
+                        transition: all 0.4s ease
+                        font-size: 2em
+                    &:hover
+                        cursor: pointer
+                        transform: scale(1.1)
+                        svg
+                            color: $color1
     .footer-bottom
         height: fit-content
         display: flex
         align-items: center
         justify-content: center
         .container
-            padding: 1em 0
+            padding: 1em 4em
             display: flex
             align-items: center
             justify-content: space-between
@@ -42,6 +70,10 @@
                         margin-left: 0
 
     @media screen and ( max-width: 768px )
+        .footer-main
+            .container
+                .logo
+                    display: none
         .footer-bottom
             .container
                 margin-top: 1em

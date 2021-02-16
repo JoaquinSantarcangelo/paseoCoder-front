@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import VanillaTilt from "vanilla-tilt";
 
 const variantsDeal = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { delay: 1 },
+    transition: { delay: 1.4 },
   },
-  exit: { opacity: 0 },
+  exit: {
+    opacity: 0,
+    transition: { delay: 1, duration: 0.6, when: "afterChildren" },
+  },
 };
 
 const variantsDeal2 = {
@@ -15,12 +19,19 @@ const variantsDeal2 = {
   visible: {
     opacity: 1,
     height: "fit-content",
-    transition: { delay: 1.4 },
+    transition: { delay: 1.6 },
   },
   exit: { opacity: 0 },
 };
 
 const Deal = ({ infoDeal, i }) => {
+  useEffect(() => {
+    const images = document.querySelectorAll("#deal-img");
+    images.forEach((im) => {
+      VanillaTilt.init(im, { max: 3 });
+    });
+  }, []);
+
   return (
     <motion.div
       variants={variantsDeal}
@@ -56,6 +67,7 @@ const Deal = ({ infoDeal, i }) => {
       <motion.div variants={variantsDeal} className="image">
         <div
           className="placeholder"
+          id="deal-img"
           style={{ backgroundImage: `url(${infoDeal.image})` }}
         ></div>
         <div

@@ -21,7 +21,7 @@ import Tiendas from "../components/containers/Tiendas";
 import Tienda from "../components/containers/Tienda";
 import Producto from "../components/containers/Producto";
 import NewArrivals from "../components/containers/NewArrivals";
-import Sale from "../components/containers/Sale";
+import Ofertas from "../components/containers/Ofertas";
 
 //---Information Pages
 import TermsConditions from "../components/containers/TermsConditions";
@@ -54,56 +54,18 @@ const tiendas = [
     name: "Grand Central Store",
     id: "grand-central-store",
     profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
+      "https://scontent.faep9-1.fna.fbcdn.net/v/t1.0-9/78587326_109333247218173_6585212830830559232_n.jpg?_nc_cat=100&ccb=3&_nc_sid=09cbfe&_nc_ohc=ZsdMVqA6EdwAX9BUox8&_nc_ht=scontent.faep9-1.fna&oh=b4abe11e110dcf8849d6ccd3c33af3a2&oe=604EC8E3",
     coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
+      "https://www.cyclonis.com/images/2019/01/apple-tech-support-scam-765x383.jpg",
     desc: "Venta de tecnología, accesorios y servicio técnico Apple",
   },
   {
-    name: "PhoneStore",
-    id: "phonestore",
+    name: "Cupido Sexshop",
+    id: "cupido-sexshop",
     profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
+      "https://instagram.faep9-1.fna.fbcdn.net/v/t51.2885-19/s150x150/140729334_1076800779461041_3451211890937034697_n.jpg?_nc_ht=instagram.faep9-1.fna.fbcdn.net&_nc_ohc=ysmmX6gDEkwAX-rDV5W&tp=1&oh=708e7d661a5cd03e751b3ad163558032&oe=605416B0",
     coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-  },
-  {
-    name: "PhoneStore",
-    id: "phonestore",
-    profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
-    coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-    social: { instagram: "http://www.intagram.com/phonestorelp" },
-  },
-  {
-    name: "Silicon Informatica",
-    id: "silicon-informatica",
-    profileImage:
-      "https://instagram.faep9-1.fna.fbcdn.net/v/t51.2885-19/s150x150/145739863_692926148046697_8231536998551052_n.jpg?_nc_ht=instagram.faep9-1.fna.fbcdn.net&_nc_ohc=3y0RA7YpFsYAX8Yjgkv&tp=1&oh=f5fe5e1eac8f06b4a0011aede8b19ecc&oe=6054312F",
-    coverImage:
-      "https://storage-asset.msi.com/event/trueGaminglanding/images/msi_pd.png",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-    invert: true,
-  },
-  {
-    name: "Grand Central Store",
-    id: "grand-central-store",
-    profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
-    coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
-    desc: "Venta de tecnología, accesorios y servicio técnico Apple",
-  },
-  {
-    name: "PhoneStore",
-    id: "phonestore",
-    profileImage:
-      "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
-    coverImage:
-      "https://www.pasajeenlinea.com/uploads/portadas/portada_5f3fe91d63fc43-36693126-88838571.jpg",
+      "https://uy.emedemujer.com/wp-content/uploads/sites/4/2014/12/Gu%C3%ADa-b%C3%A1sica-primera-ida-al-sexshop.jpg",
     desc: "Venta de tecnología, accesorios y servicio técnico Apple",
   },
 ];
@@ -170,7 +132,11 @@ export default function Index() {
                   path="/tiendas"
                   render={() => <Tiendas tiendas={tiendas} />}
                 ></Route>
-                <Route path="/tienda/:id" exact component={Tienda}></Route>
+                <Route
+                  path="/tienda/:id"
+                  exact
+                  render={() => <Tienda tiendas={tiendas} />}
+                ></Route>
                 <Route path="/tienda/:tienda/:id" component={Producto}></Route>
 
                 <Route
@@ -182,7 +148,10 @@ export default function Index() {
                   component={SecurityPrivacy}
                 ></Route>
                 <Route path="/new-arrivals" component={NewArrivals}></Route>
-                <Route path="/sale" component={Sale}></Route>
+                <Route
+                  path="/ofertas"
+                  render={() => <Ofertas deals={deals} />}
+                ></Route>
                 <Route path="/ayuda" component={Help}></Route>
               </Switch>
             </AnimatePresence>

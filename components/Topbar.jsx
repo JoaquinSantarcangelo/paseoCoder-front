@@ -12,8 +12,8 @@ const items = [
     link: "/new-arrivals",
   },
   {
-    text: "Sale",
-    link: "/sale",
+    text: "Ofertas",
+    link: "/ofertas",
   },
   {
     text: "Ayuda",
