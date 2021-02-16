@@ -6,14 +6,15 @@ const FooterMain = () => {
   return (
     <div className="footer-main">
       <div className="container">
-        <Link to="/">
-          <div className="logo">
+        <div className="logo">
+          <Link to="/">
             <img
               src="https://www.pasajeenlinea.com/uploads/logo/logo_5ed1e32b71122.png"
               alt=""
             />
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <div className="enlaces-rapidos">
           <div className="text header">Enlaces Rapidos</div>
           <Link to="/tiendas">
