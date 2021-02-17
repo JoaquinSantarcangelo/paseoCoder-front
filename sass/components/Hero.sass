@@ -1,0 +1,78 @@
+.hero
+    width: 100%
+    height: 100vh
+    overflow: hidden
+    position: relative
+
+    .carousel
+        background: #2980B9
+        background: -webkit-linear-gradient(to right, #ffffff, $color1, $color2)
+        background: linear-gradient(to right, #ffffff, $color1, $color2)
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 100%
+        position: relative
+        z-index: 10
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(0,0,0,0.1)
+            z-index: -1
+
+        .container-alt
+            height: 100%
+            display: flex
+            overflow: hidden
+            .wrapper
+                display: flex
+                flex-direction: column
+                .subwrapper
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    margin: 1em 0
+                    .title
+                        margin: 0
+                    .ver-todas
+                        border-radius: 0.375em
+                        padding: 0.375em 1.5em
+                        color: $dark0
+                        background-color: $light0
+                        transition: all 0.4s ease
+                        z-index: 100
+                        &:hover
+                            color: $light0
+                            background-color: $dark0
+                            transform: scale(1.05)
+                            cursor: pointer
+                .drag-wrapper
+                    height: 100%
+                    width: 100%
+                    overflow: hidden
+                    &::after
+                        content: ""
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        width: 100%
+                        height: 10em
+                        z-index: 100
+                        background: -webkit-linear-gradient(to right, #ffffff, $color1, $color2)
+                        background: linear-gradient(to right, #ffffff, $color1, $color2)
+                        -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
+        @media screen and ( max-width: 1024px )
+            flex-direction: column
+            .container-alt
+                .wrapper
+                    display: none
+            .tiendas-mobile
+                display: flex
+        @media screen and ( max-width: 768px )
+            .container-alt
+                max-height: 35em

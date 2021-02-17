@@ -79,11 +79,24 @@
                 padding: 1em
                 .logo
                     display: none
+                .social-links
+                    display: none
         .footer-bottom
             .container
                 margin-top: 1em
                 flex-direction: column-reverse
                 align-items: center
+                padding: 1em 2em
                 .copyright
                     margin-top: 1em
                     text-align: center
+    @media screen and ( max-width: 425px )
+        font-size: 0.9em
+        .footer-bottom
+            .container
+                padding: 1em
+        .footer-main
+            .container
+                .info
+                    justify-content: flex-end
+                    text-align: right

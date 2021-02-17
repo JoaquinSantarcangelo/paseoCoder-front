@@ -34,10 +34,7 @@ const NavbarTop = ({ cartOpen, setCartOpen }) => {
         <motion.div variants={variants} className="left-wrapper">
           <Link to="/">
             <div className="logo">
-              <img
-                src="https://www.pasajeenlinea.com/uploads/logo/logo_5ed1e32b71122.png"
-                alt=""
-              />
+              Paseo Coder
             </div>
           </Link>
           <div className="search-bar">

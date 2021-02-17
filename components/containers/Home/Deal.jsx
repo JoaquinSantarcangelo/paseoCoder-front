@@ -64,8 +64,14 @@ const Deal = ({ infoDeal, i }) => {
           {infoDeal.price[1]}
         </div>
       </motion.div>
-      <motion.div variants={variantsDeal} className="cta">
-        Me interesa
+      <motion.div
+        variants={variantsDeal}
+        initial="hidden"
+        exit="hidden"
+        animate="visible"
+        className="cta"
+      >
+        Ver producto
       </motion.div>
       <motion.div variants={variantsDeal} className="image">
         <div

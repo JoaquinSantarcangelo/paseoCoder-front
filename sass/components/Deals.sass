@@ -26,9 +26,10 @@
             justify-content: flex-start
             height: 95%
             max-height: 35em
-            min-width: 20em
+            min-width: 15em
             width: 100%
             padding: 0 0 0 2em
+            margin-bottom: 4em
 
             .placeholder
                 width: 100%
@@ -41,7 +42,7 @@
                 animation: none
                 position: absolute
                 transform-origin: center
-                transform: scale(1.4) translateY(5vh) translateX(1vw)
+                transform: scale(1.4) translateY(2vh) translateX(-4vw)
                 z-index: -1
                 opacity: 0.33
                 filter: blur(4px)
@@ -93,7 +94,7 @@
             transition: all 0.4s ease
             z-index: 1000
             backdrop-filter: blur(10px)
-            background-color: rgba(0,0,0,0.25)
+            background-color: rgba(0,0,0,0.5)
             &:hover
                 transform: scale(1.1)
 
@@ -125,6 +126,8 @@
                     font-size: 3em
                     span
                         font-size: 0.5em
+            .image
+                height: 85%
 
     @media screen and ( max-width: 768px )
         .deal
@@ -139,10 +142,14 @@
             .image
                 width: 100%
                 padding: 0
+                margin-bottom: 2em
     @media screen and ( max-width: 425px )
         height: 50vh
         min-height: 0
         .deal
+            .image
+                margin-bottom: 0
+
             .price
                 padding: 1.5em 0.5em
                 font-size: 0.8em

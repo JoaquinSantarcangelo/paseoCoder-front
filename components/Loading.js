@@ -2,15 +2,23 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Spinner } from "@chakra-ui/react";
 
+const variants = {
+  hidden: { opacity: 1 },
+  animate: {
+    opacity: 1,
+    height: "100vh",
+    transition: { when: "beforeChildren" },
+  },
+  exit: { height: "0", transition: { duration: 0.6, when: "beforeChildren" } },
+};
+
 const Loading = () => {
   return (
     <motion.div
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1, height: "100vh" }}
-      exit={{
-        height: "0",
-        transition: { duration: 0.6, when: "afterChildren" },
-      }}
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
       className="loading"
     >
       <motion.div
@@ -27,6 +35,24 @@ const Loading = () => {
           size="xl"
         />
       </motion.div>
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
+        exit={{ y: [0, 0] }}
+        className="layer"
+      ></motion.div>
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
+        exit={{ y: [0, -400] }}
+        className="layer"
+      ></motion.div>
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
+        exit={{ y: [0, -600] }}
+        className="layer"
+      ></motion.div>
     </motion.div>
   );
 };

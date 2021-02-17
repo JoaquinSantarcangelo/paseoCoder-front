@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Tienda from "../Home/Tienda";
+import { animateScroll as scroll } from "react-scroll";
 import VanillaTilt from "vanilla-tilt";
 
 const variantsTransition = {
@@ -12,7 +13,18 @@ const variantsTransition = {
 const index = ({ tiendas }) => {
   useEffect(() => {
     const cards = document.querySelectorAll(".tienda");
-    console.log(cards);
+    cards.forEach((t) => {
+      console.log(t);
+      VanillaTilt.init(t, { max: 5 });
+    });
+  }, []);
+
+  //autoScroll To Top
+  useEffect(() => {
+    const scrollToTop = () => {
+      scroll.scrollToTop();
+    };
+    scrollToTop();
   }, []);
 
   return (

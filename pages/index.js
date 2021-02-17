@@ -27,11 +27,12 @@ import Ofertas from "../components/containers/Ofertas";
 import TermsConditions from "../components/containers/TermsConditions";
 import SecurityPrivacy from "../components/containers/SecurityPrivacy";
 import Help from "../components/containers/Help";
+import TopAdBar from "../components/TopAdBar";
 
 //Fake DB
 const tiendas = [
   {
-    name: "PhoneStoress",
+    name: "PhoneStore",
     id: "phonestore",
     profileImage:
       "https://www.pasajeenlinea.com/uploads/profile/avatar_5f3fe8d651a874-32039006-74348944.jpg",
@@ -89,12 +90,19 @@ const deals = [
     image:
       "https://www.apple.com/v/airpods-max/c/images/overview/hero__gnfk5g59t0qe_xlarge.png",
   },
+  {
+    title: "Mi Band 5",
+    price: ["$", "4999"],
+    image:
+      "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1595557539.8953503.png?thumb=1&w=1082&h=1082&width=1082&height=1082",
+  },
 ];
 
 export default function Index() {
   const [signInUpOpen, setSignInUpOpen] = useState(false);
   const [onBoardOpen, setOnBoardOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [topAdBarOpen, setTopAdBarOpen] = useState(true);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -125,6 +133,9 @@ export default function Index() {
         </AnimatePresence>
 
         {/* Bars | Starts*/}
+        <AnimatePresence>
+          {topAdBarOpen && <TopAdBar setTopAdBarOpen={setTopAdBarOpen} />}
+        </AnimatePresence>
         <Topbar signInUpOpen={signInUpOpen} setSignInUpOpen={setSignInUpOpen} />
         <Navbar setCartOpen={setCartOpen} cartOpen={cartOpen} />
         {/* Bars | Ends*/}

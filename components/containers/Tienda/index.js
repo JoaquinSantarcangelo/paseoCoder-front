@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
 
 const variantsTransition = {
@@ -15,6 +15,15 @@ const index = ({ tiendas }) => {
     tiendas.find((t) => t.id === id)
   );
 
+  //autoScroll To Top
+  useEffect(() => {
+    const scrollToTop = () => {
+      scroll.scrollToTop();
+    };
+    scrollToTop();
+  }, []);
+
+  //Fetch Params with info
   useEffect(() => {
     console.log(id);
     console.log(tiendas);
@@ -33,7 +42,18 @@ const index = ({ tiendas }) => {
       <div
         style={{ backgroundImage: `url(${infoTienda.coverImage})` }}
         className="tienda-hero"
-      ></div>
+      >
+        <div className="container-alt">
+          <div className="logo">
+            <div
+              className="placeholder"
+              style={{ backgroundImage: `url(${infoTienda.profileImage})` }}
+            ></div>
+          </div>
+          <div className="name">{infoTienda.name}</div>
+        </div>
+        <div className="overlay"></div>
+      </div>
       <div className="container-alt">
         <div className="config"></div>
       </div>

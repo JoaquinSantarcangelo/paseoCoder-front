@@ -3,6 +3,7 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 // CSS Imports
 // -- Components --
 import "../sass/components/Topbar.sass";
+import "../sass/components/TopAdBar.sass";
 import "../sass/components/Navbar.sass";
 import "../sass/components/Footer.sass";
 import "../sass/components/SignInUp.sass";
@@ -23,7 +24,9 @@ import "../sass/containers/Dashboard/SignIn.sass";
 
 //Normalizer
 import "normalize.css";
-3;
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const colors = {
   dark: {

@@ -10,6 +10,10 @@ module.exports = {
         source: "/dashboard",
         destination: "/dashboard",
       },
+      {
+        source: "/test",
+        destination: "/test",
+      },
     ];
   },
 };
