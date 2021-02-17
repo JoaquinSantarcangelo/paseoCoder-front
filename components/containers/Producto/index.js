@@ -17,8 +17,11 @@ const index = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
+      className="producto-page"
     >
-      Producto {id} de {tienda}
+      <div className="container">
+        Producto {id} de {tienda}
+      </div>
     </motion.div>
   );
 };

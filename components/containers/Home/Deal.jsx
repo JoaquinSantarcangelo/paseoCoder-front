@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import VanillaTilt from "vanilla-tilt";
 
@@ -64,15 +65,18 @@ const Deal = ({ infoDeal, i }) => {
           {infoDeal.price[1]}
         </div>
       </motion.div>
-      <motion.div
-        variants={variantsDeal}
-        initial="hidden"
-        exit="hidden"
-        animate="visible"
-        className="cta"
-      >
-        Ver producto
-      </motion.div>
+      <Link to={`/tienda/${infoDeal.tiendaId}/${infoDeal.id}`}>
+        <motion.div
+          variants={variantsDeal}
+          initial="hidden"
+          exit="hidden"
+          animate="visible"
+          className="cta"
+        >
+          Ver producto
+        </motion.div>
+      </Link>
+
       <motion.div variants={variantsDeal} className="image">
         <div
           className="placeholder"

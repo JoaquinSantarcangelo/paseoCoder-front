@@ -18,6 +18,7 @@ import "../sass/containers/TermsConditions.sass";
 import "../sass/containers/SecurityPrivacy.sass";
 import "../sass/containers/Sale.sass";
 import "../sass/containers/Help.sass";
+import "../sass/containers/Producto.sass";
 
 // -- Dashboard --
 import "../sass/containers/Dashboard/SignIn.sass";

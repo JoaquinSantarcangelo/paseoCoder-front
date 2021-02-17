@@ -74,24 +74,32 @@ const tiendas = [
 const deals = [
   {
     title: "Iphone 12",
+    id: "apple-iphone-12",
+    tiendaId: "phonestore",
     price: ["USD", "899"],
     image:
       "https://personal.vteximg.com.br/arquivos/ids/405529-600-600/iPhone-SE-White-ATu-plan-Factura-1-1428615.jpg?v=637424406205730000",
   },
   {
     title: "Redmi Note 9",
+    id: "xiaomi-redmi-note-9",
+    tiendaId: "phonestore",
     price: ["USD", "399"],
     image:
       "https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-9-pro/specs1block.png",
   },
   {
     title: "Airpods Max",
+    id: "apple-airpods-max",
+    tiendaId: "phonestore",
     price: ["USD", "699"],
     image:
       "https://www.apple.com/v/airpods-max/c/images/overview/hero__gnfk5g59t0qe_xlarge.png",
   },
   {
     title: "Mi Band 5",
+    id: "xiaomi-mi-band-5",
+    tiendaId: "grand-central-store",
     price: ["$", "4999"],
     image:
       "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1595557539.8953503.png?thumb=1&w=1082&h=1082&width=1082&height=1082",
@@ -144,37 +152,55 @@ export default function Index() {
           render={({ location }) => (
             <AnimatePresence exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
+                {/* Home */}
                 <Route
                   path="/"
                   exact
                   render={() => <Home deals={deals} tiendas={tiendas} />}
-                ></Route>
-                <Route path="/search" component={Search}></Route>
+                />
+
+                {/* Search */}
+                <Route path="/search" component={Search} />
+
+                {/* Tiendas */}
                 <Route
                   path="/tiendas"
                   render={() => <Tiendas tiendas={tiendas} />}
-                ></Route>
+                />
+
+                {/* Tienda */}
                 <Route
                   path="/tienda/:id"
                   exact
                   render={() => <Tienda tiendas={tiendas} />}
-                ></Route>
-                <Route path="/tienda/:tienda/:id" component={Producto}></Route>
+                />
 
+                {/* Producto */}
+                <Route path="/tienda/:tienda/:id" component={Producto} />
+
+                {/* Terminos y Condiciones */}
                 <Route
                   path="/terminos-y-condiciones"
                   component={TermsConditions}
-                ></Route>
+                />
+
+                {/* Seguridad Y Privacidad */}
                 <Route
                   path="/seguridad-y-privacidad"
                   component={SecurityPrivacy}
-                ></Route>
-                <Route path="/new-arrivals" component={NewArrivals}></Route>
+                />
+
+                {/* New Arrivals */}
+                <Route path="/new-arrivals" component={NewArrivals} />
+
+                {/* Ofertas */}
                 <Route
                   path="/ofertas"
                   render={() => <Ofertas deals={deals} />}
-                ></Route>
-                <Route path="/ayuda" component={Help}></Route>
+                />
+
+                {/* Help */}
+                <Route path="/ayuda" component={Help} />
               </Switch>
             </AnimatePresence>
           )}

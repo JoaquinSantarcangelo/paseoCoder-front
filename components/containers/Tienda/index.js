@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
 
+//Components
+import TiendaHero from "./TiendaHero";
+
 const variantsTransition = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -39,21 +42,7 @@ const index = ({ tiendas }) => {
       exit="exit"
       className="tienda-page"
     >
-      <div
-        style={{ backgroundImage: `url(${infoTienda.coverImage})` }}
-        className="tienda-hero"
-      >
-        <div className="container">
-          <div className="logo">
-            <div
-              className="placeholder"
-              style={{ backgroundImage: `url(${infoTienda.profileImage})` }}
-            ></div>
-          </div>
-          <div className="name">{infoTienda.name}</div>
-        </div>
-        <div className="overlay"></div>
-      </div>
+      <TiendaHero infoTienda={infoTienda} />
       <div className="container-alt">
         <div className="config"></div>
       </div>
