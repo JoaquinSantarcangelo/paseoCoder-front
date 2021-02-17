@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const brands = [
   {
@@ -24,13 +25,17 @@ const brands = [
 const Brands = () => {
   return (
     <div className="brands">
-      <div className="container">
+      <motion.div
+        drag="x"
+        dragConstraints={{ left: -200, right: 0 }}
+        className="container"
+      >
         {brands.map((b) => (
           <div className="brand">
             <img src={b.link}></img>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

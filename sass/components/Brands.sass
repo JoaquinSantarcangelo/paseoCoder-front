@@ -7,6 +7,8 @@
     justify-content: center
     background-color: $dark0
     border-bottom: 5px solid $color1
+    min-width: 768px
+
     .container
         display: flex
         justify-content: space-between
@@ -18,9 +20,9 @@
             filter: grayscale(1)
             transition: all 0.4s ease
             img
-                height: 8vh
+                height: 5vw
+                min-height: 3em
                 max-width: 9em
             &:hover
                 filter: grayscale(0)
                 transform: scale(1.1)
-                cursor: pointer

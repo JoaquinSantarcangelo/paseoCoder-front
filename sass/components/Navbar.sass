@@ -77,7 +77,23 @@
                     font-size: 2em
     //Navbar Main
     .navbar-main
+        background-color: $light0
         height: 5vh
-        box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px
+        display: flex
+        justify-content: center
+        align-items: center
+        text-transform: uppercase
+        box-shadow: rgba(17, 17, 26, 0.025) 0px 4px 16px, rgba(17, 17, 26, 0.025) 0px 8px 32px
+        .container
+
+            .items
+                display: flex
+                position: relative
+                .item
+                    margin-right: 3vw
+                    transition: all 0.4s ease
+                    &:hover
+                        cursor: pointer
+
         @media screen and ( max-width: 768px )
             display: none

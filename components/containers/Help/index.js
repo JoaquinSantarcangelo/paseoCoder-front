@@ -45,7 +45,7 @@ const Faq = ({ faq }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <motion.div layout onClick={() => setOpen(!open)} className="faq">
+    <motion.div onClick={() => setOpen(!open)} className="faq">
       <div className="question">{faq.question}</div>
       {open && (
         <motion.div

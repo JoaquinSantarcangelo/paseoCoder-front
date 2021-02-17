@@ -58,6 +58,7 @@
                     &::after
                         content: ""
                         position: absolute
+                        pointer-events: none
                         bottom: 0
                         left: 0
                         width: 100%
@@ -66,13 +67,13 @@
                         background: -webkit-linear-gradient(to right, #ffffff, $color1, $color2)
                         background: linear-gradient(to right, #ffffff, $color1, $color2)
                         -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
-        @media screen and ( max-width: 1024px )
+
+    @media screen and ( max-width: 1024px )
+        min-height: 55em
+        .carousel
             flex-direction: column
             .container-alt
                 .wrapper
                     display: none
             .tiendas-mobile
                 display: flex
-        @media screen and ( max-width: 768px )
-            .container-alt
-                max-height: 35em

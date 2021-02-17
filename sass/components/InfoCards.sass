@@ -68,3 +68,16 @@
                 &:nth-child(1),
                 &:nth-child(2)
                     margin-bottom: 1em
+    @media screen and ( max-width: 1024px )
+        .container-alt
+            padding: 1.5em 2em
+            .card
+                height: 50%
+                width: 48%
+                &:nth-child(1),
+                &:nth-child(2)
+                    margin-bottom: 0.75em
+
+    @media screen and ( max-width: 768px )
+        .container-alt
+            display: none

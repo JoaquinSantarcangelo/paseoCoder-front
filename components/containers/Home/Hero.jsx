@@ -17,7 +17,7 @@ const variants = {
 };
 
 const Hero = ({ variantsTransition, tiendas, deals }) => {
-  const [activeDeal, setActiveDeal] = useState(1);
+  const [activeDeal, setActiveDeal] = useState(2);
   const [blockDeal, setBlockDeal] = useState(false);
 
   return (
