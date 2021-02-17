@@ -43,7 +43,7 @@ const index = ({ tiendas }) => {
         style={{ backgroundImage: `url(${infoTienda.coverImage})` }}
         className="tienda-hero"
       >
-        <div className="container-alt">
+        <div className="container">
           <div className="logo">
             <div
               className="placeholder"

@@ -50,7 +50,13 @@ const Loading = () => {
       <motion.div
         initial={{ y: 0 }}
         animate={{ y: 0 }}
-        exit={{ y: [0, -600] }}
+        exit={{ y: [0, -600, -1200] }}
+        className="layer"
+      ></motion.div>
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
+        exit={{ y: [0, -800, -1400] }}
         className="layer"
       ></motion.div>
     </motion.div>

@@ -25,7 +25,7 @@ const index = () => {
       exit="exit"
       className="new-arrivals"
     >
-      <div className="container-alt">
+      <div className="container">
         <motion.div className="title" layoutId="title">
           New Arrivals
         </motion.div>
