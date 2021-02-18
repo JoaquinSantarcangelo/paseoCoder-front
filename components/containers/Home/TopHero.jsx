@@ -9,12 +9,11 @@ import {
 
 var settings = {
   dots: false,
-  lazyLoad: true,
   infinite: true,
   autoplay: true,
   adaptiveHeight: true,
   autoplaySpeed: 7000,
-  speed: 1000,
+  speed: 750,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -35,6 +34,7 @@ const newArrivals = [
     background: "/assets/img/top-hero/promo1-bg.jpg",
   },
   {
+    toptitle: "Xiaomi",
     title: "Mi Band 5",
     subtitle: "LA NUEVA GENERACION DE XIAOMI",
     image:
@@ -66,7 +66,7 @@ const variantsBlur = {
     y: 0,
     filter: "blur(0px)",
     scale: 1,
-    transition: { delay: 0.6, duration: 1.4 },
+    transition: { delay: 1, duration: 1.4 },
   },
   exit: { opacity: 0, y: -20 },
 };
@@ -78,6 +78,7 @@ const Slide = ({ id, slideInfo, variants, shadow, overlay, className }) => {
   useEffect(() => {
     if (inView) {
       controls.start("visible");
+      // setTimeout(() => controls.start("visible"), 100);
     }
     if (!inView) {
       controls.start("hidden");
@@ -85,10 +86,12 @@ const Slide = ({ id, slideInfo, variants, shadow, overlay, className }) => {
   }, [controls, inView]);
 
   return (
-    <div id={id} className={`slide ${className} ${overlay && "overlay"}`}>
+    <motion.div
+      id={id}
+      className={`slide ${className} ${overlay && "overlay"}`}
+    >
       <div className="container">
         <motion.div
-          ref={ref}
           variants={variants1}
           initial="hidden"
           animate={controls}
@@ -96,6 +99,9 @@ const Slide = ({ id, slideInfo, variants, shadow, overlay, className }) => {
           className={shadow ? "image shadow" : "image"}
           className="info"
         >
+          <motion.div variants={variants1} className="toptitle">
+            {slideInfo.toptitle}
+          </motion.div>
           <motion.div variants={variants1} className="title">
             {slideInfo.title}
           </motion.div>
@@ -109,11 +115,12 @@ const Slide = ({ id, slideInfo, variants, shadow, overlay, className }) => {
           animate={controls}
           exit="exit"
           className="image"
+          ref={ref}
         >
           <img src={slideInfo.image} alt="" />
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
