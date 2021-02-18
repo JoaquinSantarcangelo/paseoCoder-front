@@ -45,8 +45,12 @@ const newArrivals = [
 
 const variantsRotate = {
   hidden: { opacity: 0, rotateZ: 45 },
-  visible: { opacity: 1, rotateZ: 0, transition: { delay: 0.6, duration: 1.4 } },
-  exit: { opacity: 0, rotateZ: -45 },
+  visible: {
+    opacity: 1,
+    rotateZ: 0,
+    transition: { delay: 0.6, duration: 1.4 },
+  },
+  exit: { opacity: 0, rotateZ: -45, transition: { duration: 1.4 } },
 };
 
 const variants1 = {
@@ -55,7 +59,19 @@ const variants1 = {
   exit: { opacity: 0, y: -20 },
 };
 
-const Slide = ({ id, slideInfo, rotate, shadow }) => {
+const variantsBlur = {
+  hidden: { opacity: 0, y: 40, filter: "blur(4px)", scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    scale: 1,
+    transition: { delay: 0.6, duration: 1.4 },
+  },
+  exit: { opacity: 0, y: -20 },
+};
+
+const Slide = ({ id, slideInfo, variants, shadow, overlay, className }) => {
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
@@ -69,7 +85,7 @@ const Slide = ({ id, slideInfo, rotate, shadow }) => {
   }, [controls, inView]);
 
   return (
-    <div id={id} className="slide">
+    <div id={id} className={`slide ${className} ${overlay && "overlay"}`}>
       <div className="container">
         <motion.div
           ref={ref}
@@ -88,7 +104,7 @@ const Slide = ({ id, slideInfo, rotate, shadow }) => {
           </motion.div>
         </motion.div>
         <motion.div
-          variants={rotate ? variantsRotate : variants1}
+          variants={variants}
           initial="hidden"
           animate={controls}
           exit="exit"
@@ -114,9 +130,26 @@ const TopHero = ({ variantsTransition }) => {
       </div>
       <div className="slider">
         <Slider {...settings}>
-          <Slide id="first" slideInfo={newArrivals[0]} rotate />
-          <Slide id="second" slideInfo={newArrivals[1]} shadow />
-          <Slide id="third" slideInfo={newArrivals[2]} />
+          <Slide
+            id="first"
+            className="squares"
+            variants={variantsBlur}
+            slideInfo={newArrivals[0]}
+          />
+          <Slide
+            id="second"
+            className="wood-2"
+            slideInfo={newArrivals[1]}
+            variants={variantsBlur}
+            shadow
+            overlay
+          />
+          <Slide
+            id="third"
+            variants={variantsBlur}
+            className="diagmonds"
+            slideInfo={newArrivals[2]}
+          />
         </Slider>
       </div>
     </motion.div>
