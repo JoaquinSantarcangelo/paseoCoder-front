@@ -44,10 +44,11 @@ const newArrivals = [
 ];
 
 const variantsRotate = {
-  hidden: { opacity: 0, rotateZ: 45 },
+  hidden: { opacity: 0, rotateZ: 45, filter: "blur(2px)" },
   visible: {
     opacity: 1,
     rotateZ: 0,
+    filter: "blur(0px)",
     transition: { delay: 0.6, duration: 1.4 },
   },
   exit: { opacity: 0, rotateZ: -45, transition: { duration: 1.4 } },
@@ -140,7 +141,7 @@ const TopHero = ({ variantsTransition }) => {
           <Slide
             id="first"
             className="squares"
-            variants={variantsBlur}
+            variants={variantsRotate}
             slideInfo={newArrivals[0]}
           />
           <Slide
