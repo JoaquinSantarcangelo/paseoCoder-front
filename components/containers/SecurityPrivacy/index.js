@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { animateScroll as scroll } from "react-scroll";
+
 const variantsTransition = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -7,6 +9,15 @@ const variantsTransition = {
 };
 
 const index = () => {
+  
+  //autoScroll To Top
+  useEffect(() => {
+    const scrollToTop = () => {
+      scroll.scrollToTop();
+    };
+    scrollToTop();
+  }, []);
+
   return (
     <motion.div
       variants={variantsTransition}
